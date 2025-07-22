@@ -1,0 +1,223 @@
+[gd_scene load_steps=11 format=3 uid="uid://cu4bf1jfjry4a"]
+
+[ext_resource type="Script" uid="uid://bdjfftqvlb65u" path="res://scripts/ui/main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://6lqvbxdtrkop" path="res://assets/sprites/backgrounds/stars.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://42lidm2rxpjn" path="res://assets/sprites/player/spaceship.png" id="3_7mycd"]
+[ext_resource type="FontFile" uid="uid://cx2opj0fpfshq" path="res://fonts/Tanker/Fonts/OTF/Tanker-Regular.otf" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://c8yqdpogj7nvd" path="res://assets/sprites/bullets/bullet.png" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://df0tpmpys8vo7" path="res://assets/sprites/enemies/enemy.png" id="5_5vw27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xm2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 645.0
+script = ExtResource("1_ig7tw")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 9.0
+offset_right = -1.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0xm2m")
+metadata/_edit_use_anchors_ = true
+
+[node name="enemie01" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 321.0
+offset_right = 249.0
+offset_bottom = 385.0
+texture = ExtResource("5_5vw27")
+
+[node name="enemie02" type="TextureRect" parent="."]
+offset_left = 1025.0
+offset_top = 123.0
+offset_right = 1089.0
+offset_bottom = 187.0
+texture = ExtResource("5_5vw27")
+
+[node name="enemie03" type="TextureRect" parent="."]
+offset_left = 860.0
+offset_top = 312.0
+offset_right = 924.0
+offset_bottom = 376.0
+texture = ExtResource("5_5vw27")
+
+[node name="enemie04" type="TextureRect" parent="."]
+offset_left = 975.0
+offset_top = 480.0
+offset_right = 1039.0
+offset_bottom = 544.0
+texture = ExtResource("5_5vw27")
+
+[node name="enemie05" type="TextureRect" parent="."]
+offset_left = 113.0
+offset_top = 520.0
+offset_right = 177.0
+offset_bottom = 584.0
+texture = ExtResource("5_5vw27")
+
+[node name="enemie06" type="TextureRect" parent="."]
+offset_left = 164.0
+offset_top = 108.0
+offset_right = 228.0
+offset_bottom = 172.0
+texture = ExtResource("5_5vw27")
+
+[node name="player" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 526.0
+offset_right = 620.0
+offset_bottom = 617.0
+texture = ExtResource("3_7mycd")
+
+[node name="bullet5" type="TextureRect" parent="player"]
+offset_left = 11.0
+offset_top = -375.0
+offset_right = 124.0
+offset_bottom = -262.0
+texture = ExtResource("4_272bh")
+expand_mode = 1
+
+[node name="bullet4" type="TextureRect" parent="player"]
+offset_left = -32.0
+offset_top = -459.0
+offset_right = 81.0
+offset_bottom = -346.0
+texture = ExtResource("4_272bh")
+expand_mode = 1
+
+[node name="bullet3" type="TextureRect" parent="player"]
+offset_left = -31.0
+offset_top = -285.0
+offset_right = 82.0
+offset_bottom = -172.0
+texture = ExtResource("4_272bh")
+expand_mode = 1
+
+[node name="bullet2" type="TextureRect" parent="player"]
+offset_left = 16.0
+offset_top = -162.0
+offset_right = 129.0
+offset_bottom = -49.0
+texture = ExtResource("4_272bh")
+expand_mode = 1
+
+[node name="bullet1" type="TextureRect" parent="player"]
+layout_mode = 2
+offset_left = -20.0
+offset_top = -77.0
+offset_right = 93.0
+offset_bottom = 36.0
+texture = ExtResource("4_272bh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.5
+offset_right = 384.5
+offset_bottom = 173.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_h2yge")
+theme_override_font_sizes/font_size = 137
+text = "Space Invaders"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -146.0
+offset_right = 199.5
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 7
+size_flags_stretch_ratio = 7.24
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+text = "Options"
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.24
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+text = "Start Game"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 7
+size_flags_stretch_ratio = 7.24
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+text = "Exit"

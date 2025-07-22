@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://hm41mrynstf"]
+
+[ext_resource type="Texture2D" uid="uid://42lidm2rxpjn" path="res://assets/sprites/player/spaceship.png" id="1_6e84v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6e84v"]
+size = Vector2(62, 40)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6e84v")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_6e84v")
