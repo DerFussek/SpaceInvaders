@@ -11,6 +11,6 @@ public partial class BasicBullet : Area2D
 		Vector2 speedVector = new Vector2(0, -1) * this.speedMultiplyer;
 		Position += speedVector * (float)delta;
 
-		if (GlobalPosition.Y >= 0) QueueFree();
+                if (GlobalPosition.Y <= 0) QueueFree();
 	}
 }

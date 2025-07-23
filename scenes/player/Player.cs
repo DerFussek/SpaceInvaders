@@ -27,9 +27,9 @@ public partial class Player : CharacterBody2D
 		if (@event.IsActionPressed("shoot"))
 		{
 			bulletScene = GD.Load<PackedScene>("res://scenes/bullet/basic_bullet.tscn");
-			Area2D item = bulletScene.Instantiate<Area2D>();
-			AddChild(item);
-			item.GlobalPosition = GlobalPosition;
+                        Area2D item = bulletScene.Instantiate<Area2D>();
+                        GetParent().AddChild(item);
+                        item.GlobalPosition = GlobalPosition;
 		}
 	}
 	private void MovementInput()

@@ -25,9 +25,9 @@ public partial class Level01 : Node2D
 		if (@event.IsActionPressed("shoot"))
 		{
 			bulletScene = GD.Load<PackedScene>("res://scenes/bullet/basic_bullet.tscn");
-			Area2D item = bulletScene.Instantiate<Area2D>();
-			AddChild(item);
-			bulletScene = GD.Load<PackedScene>("res://scenes/bullet/basic_bullet.tscn");item.GlobalPosition = GlobalPosition;
+                        Area2D item = bulletScene.Instantiate<Area2D>();
+                        AddChild(item);
+                        item.GlobalPosition = GlobalPosition;
 		}
 	}
 
