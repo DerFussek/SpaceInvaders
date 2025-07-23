@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bdjfftqvlb65u" path="res://scripts/ui/main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://6lqvbxdtrkop" path="res://assets/sprites/backgrounds/stars.png" id="2_0xm2m"]
-[ext_resource type="FontFile" uid="uid://cx2opj0fpfshq" path="res://fonts/Tanker/Fonts/OTF/Tanker-Regular.otf" id="3_h2yge"]
+[ext_resource type="FontFile" uid="uid://cx2fwwvwka5d6" path="res://fonts/Array/Fonts/OTF/Array-Regular.otf" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://df0tpmpys8vo7" path="res://assets/sprites/enemies/enemy.png" id="5_5vw27"]
-[ext_resource type="PackedScene" uid="uid://dckhflolagj7a" path="res://scenes/player/player.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://1pasi1cny32l" path="res://scenes/player/player.tscn" id="7_272bh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xm2m"]
 
@@ -122,7 +122,7 @@ offset_left = -384.5
 offset_right = 384.5
 offset_bottom = 173.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_h2yge")
+theme_override_fonts/font = ExtResource("4_lquwl")
 theme_override_font_sizes/font_size = 137
 text = "Space Invaders"
 horizontal_alignment = 1
@@ -178,4 +178,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
 text = "Exit"
 
 [node name="Player" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(575, 578)
+position = Vector2(583, 604)

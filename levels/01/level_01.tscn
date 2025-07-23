@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ypfh3pug8k7"]
+
+[ext_resource type="Texture2D" uid="uid://6lqvbxdtrkop" path="res://assets/sprites/backgrounds/stars.png" id="1_p4c6t"]
+[ext_resource type="PackedScene" uid="uid://1pasi1cny32l" path="res://scenes/player/player.tscn" id="2_to7hf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p4c6t")
+
+[node name="Player" parent="." instance=ExtResource("2_to7hf")]
+position = Vector2(578, 596)
+metadata/_edit_group_ = true

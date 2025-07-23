@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dckhflolagj7a"]
+[gd_scene load_steps=4 format=3 uid="uid://1pasi1cny32l"]
 
 [ext_resource type="Texture2D" uid="uid://42lidm2rxpjn" path="res://assets/sprites/player/spaceship.png" id="1_6e84v"]
-[ext_resource type="Script" uid="uid://bt4mx223kmbmu" path="res://scenes/player/Player.cs" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://bmk0wofdi7tmk" path="res://scripts/player/Player.cs" id="1_dovo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
-size = Vector2(58, 38)
+size = Vector2(59, 37)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dovo2")
@@ -13,5 +13,4 @@ script = ExtResource("1_dovo2")
 texture = ExtResource("1_6e84v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_8afob")
