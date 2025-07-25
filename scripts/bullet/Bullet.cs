@@ -6,8 +6,7 @@ public partial class Bullet : Area2D
 {
 	[Export]
 	private float speedFactor = 150.0f;
-	Vector2 dir;
-	private Sprite2D sprite;
+	Vector2 dir;	private Sprite2D sprite;
 
 	public override void _Ready()
 	{

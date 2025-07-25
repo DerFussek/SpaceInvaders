@@ -20,7 +20,6 @@ public partial class Level01 : Node2D
 
 	private void loosing()
 	{
-
 		this.QueueFree();
 	}
 
