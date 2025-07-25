@@ -4,12 +4,12 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	[Export(PropertyHint.Link)]
-	private Vector2 speed = new(200, 0);
-	private Vector2 size;
+	private Vector2 speed = new(200, 0); //Movementspeed Player
+	private Vector2 size; //Viewportsize
 
     public override void _Ready()
 	{
-		this.size = GetViewport().GetVisibleRect().Size;
+		this.size = GetViewport().GetVisibleRect().Size; //Get the size and save it
 	}
 	
 	public override void _PhysicsProcess(double delta)

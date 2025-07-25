@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cu4bf1jfjry4a"]
 
-[ext_resource type="Script" uid="uid://bdjfftqvlb65u" path="res://scripts/ui/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://4m4b2y011vvg" path="res://scripts/ui/Main.cs" id="1_lquwl"]
 [ext_resource type="Texture2D" uid="uid://6lqvbxdtrkop" path="res://assets/sprites/backgrounds/stars.png" id="2_0xm2m"]
 [ext_resource type="FontFile" uid="uid://cx2fwwvwka5d6" path="res://fonts/Array/Fonts/OTF/Array-Regular.otf" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://df0tpmpys8vo7" path="res://assets/sprites/enemies/enemy.png" id="5_5vw27"]
@@ -49,7 +49,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 645.0
-script = ExtResource("1_ig7tw")
+script = ExtResource("1_lquwl")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 1

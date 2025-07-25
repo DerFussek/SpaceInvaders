@@ -5,7 +5,7 @@ public partial class SignalManager : Node
 {
 	public static SignalManager Instance { get; private set; } = new SignalManager();
 
-	[Signal]
+	[Signal] //Signal for Scoreing
 	public delegate void ScoreEventHandler(int ammount);
 
 	public static void EmitScore(int ammount)
@@ -13,15 +13,16 @@ public partial class SignalManager : Node
 		Instance.EmitSignal(SignalName.Score, ammount);
 	}
 
-	[Signal]
+	[Signal] //Signal for Loosing
 	public delegate void LoosingEventHandler();
 
 	public static void EmitLoosing()
 	{
 		Instance.EmitSignal(SignalName.Loosing);
+		
 	}
 
-	[Signal]
+	[Signal] //Signal for Winning
 	public delegate void WinningEventHandler();
 
 	public static void EmitWinning()

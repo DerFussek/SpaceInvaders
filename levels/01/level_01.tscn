@@ -28,7 +28,7 @@ position = Vector2(578, 596)
 metadata/_edit_group_ = true
 
 [node name="enemie" parent="." instance=ExtResource("3_02d30")]
-position = Vector2(528, 67)
+position = Vector2(19, 68)
 speedMultiplyer = 100.0
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -47,3 +47,5 @@ collision_mask = 7
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(1136, 324)
 shape = SubResource("RectangleShape2D_my3em")
+
+[node name="Timer" type="Timer" parent="."]

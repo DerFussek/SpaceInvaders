@@ -3,36 +3,23 @@ using System;
 
 public partial class Enemie : CharacterBody2D
 {
-
 	[Export]
-	private float speedMultiplyer = 2.0f;
-	private Vector2 size;
-
+	public float speedMultiplyer { get; set; } = 2.0f;   //Movementspeed
+	private Vector2 size; //Viewport size
 	private Boolean heading = false; //Wenn false --> Rechts // Wenn true --> links
-
-
-	private Area2D area;
+	private Area2D area; //For Collision
 
 	public override void _Ready()
 	{
 		area = GetNode<Area2D>("Area2D");
 		area.BodyEntered += onPlayerCollision;
-		area.AreaEntered += onBulletCollision;
+		area.AreaEntered += onAreaCollision;
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		changeDirection();
-		checkForWall();
-		MoveAndSlide();
-	}
-
-	private void checkForWall()
-	{
-		if(IsOnWall()) {
-			
-			heading = !heading;	
-		}
+		changeDirection(); //Calculate Movement
+		MoveAndSlide(); //Apply Movement
 	}
 
 	private void changeDirection()
@@ -51,17 +38,19 @@ public partial class Enemie : CharacterBody2D
 		SignalManager.EmitLoosing();
 	}
 
-	private void onBulletCollision(Area2D otherArea)
+	private void onAreaCollision(Area2D otherArea)
 	{
-		if (otherArea is Bullet)
+		if (otherArea is Bullet) //If it isn't a Bullet it must be the Wall
 		{
-			this.QueueFree();
-			otherArea.QueueFree();	
+			SignalManager.EmitScore(1);
+			this.QueueFree(); //Kill the ENemy
+			otherArea.QueueFree();  //Kill the colliding Bullet
 		}
 
-		heading = !heading;
-		GlobalPosition = new Vector2(GlobalPosition.X, GlobalPosition.Y + 32);
-		speedMultiplyer *= 1.1f;
-	}
-	
+		//Action for colliding with the Wall
+		heading = !heading; //Change direction
+		GlobalPosition = new Vector2(GlobalPosition.X, GlobalPosition.Y + 32); //Move down
+		speedMultiplyer *= 1.1f; //increase Speed by 10%
+		
+	}	
 }
