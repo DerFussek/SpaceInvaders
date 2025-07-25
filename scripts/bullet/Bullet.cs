@@ -1,6 +1,7 @@
 using System;
 using Godot;
 
+[GlobalClass]
 public partial class Bullet : Area2D
 {
 	[Export]
@@ -8,10 +9,10 @@ public partial class Bullet : Area2D
 	Vector2 dir;
 	private Sprite2D sprite;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		sprite = GetNode<Sprite2D>("Sprite2D");
-    }
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -26,5 +27,9 @@ public partial class Bullet : Area2D
 	{
 		return Position.Y <= 0 - 32;
 	}
-	
+
+	public void suicide()
+	{
+		this.QueueFree();
+	}
 }

@@ -1,18 +1,28 @@
 using Godot;
+using System;
 
 public partial class Player : CharacterBody2D
 {
 	[Export(PropertyHint.Link)]
 	private Vector2 speed = new(200, 0);
+	private Vector2 size;
 
+    public override void _Ready()
+	{
+		this.size = GetViewport().GetVisibleRect().Size;
+	}
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		handleInput();
 		MoveAndSlide();
+		checkForWall();
 	}
 
-	private void checkForWall() {
-		
+	private void checkForWall()
+	{
+		if (GlobalPosition.X <= 32) GlobalPosition = new Vector2(32, GlobalPosition.Y);
+		if (GlobalPosition.X >= this.size.X - 32) GlobalPosition = new Vector2(size.X - 32, GlobalPosition.Y);
 	}
 
 	private void handleInput()

@@ -7,8 +7,11 @@
 radius = 5.0
 height = 26.0
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["Bullet"]]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_83itf")
+speedFactor = 350.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7c8un")

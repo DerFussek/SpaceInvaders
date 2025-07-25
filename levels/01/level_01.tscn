@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2ypfh3pug8k7"]
+[gd_scene load_steps=6 format=3 uid="uid://c2ypfh3pug8k7"]
 
+[ext_resource type="Script" uid="uid://caxokb68xq41j" path="res://levels/01/Level01.cs" id="1_my3em"]
 [ext_resource type="Texture2D" uid="uid://6lqvbxdtrkop" path="res://assets/sprites/backgrounds/stars.png" id="1_p4c6t"]
 [ext_resource type="PackedScene" uid="uid://1pasi1cny32l" path="res://scenes/player/player.tscn" id="2_to7hf"]
+[ext_resource type="PackedScene" uid="uid://cb217dnh35gd2" path="res://scenes/enemie/enemie.tscn" id="3_02d30"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my3em"]
+size = Vector2(20, 648)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(47, 0)
+script = ExtResource("1_my3em")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -128
@@ -19,3 +26,24 @@ texture = ExtResource("1_p4c6t")
 [node name="Player" parent="." instance=ExtResource("2_to7hf")]
 position = Vector2(578, 596)
 metadata/_edit_group_ = true
+
+[node name="enemie" parent="." instance=ExtResource("3_02d30")]
+position = Vector2(528, 67)
+speedMultiplyer = 100.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-57, 324)
+shape = SubResource("RectangleShape2D_my3em")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-21, 0)
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1136, 324)
+shape = SubResource("RectangleShape2D_my3em")
