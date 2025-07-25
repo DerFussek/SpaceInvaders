@@ -5,6 +5,7 @@ public partial class Level01 : Node2D
 {
 	Timer spawnTimer;
 	private int score = 0;
+	Label scoreLabel;
 	public override void _Ready()
 	{
 		//SIGNALS
@@ -15,8 +16,11 @@ public partial class Level01 : Node2D
 		//TIMER
 		spawnTimer = GetNode<Timer>("Timer");
 		spawnTimer.Start(0.5);
-
 		spawnTimer.Timeout += OnTimerTimeout;
+
+		//Score
+		scoreLabel = GetNode<Label>("CanvasLayer/Label");
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +42,13 @@ public partial class Level01 : Node2D
 	private void scoring(int ammount)
 	{
 		score += ammount;
-		GD.Print(score);
+		string _score = "";
+		
+		if(score < 10) _score = "0";
+		_score += score.ToString();
+
+		scoreLabel.Text = _score;
+
 	}
 
 	private void OnTimerTimeout()

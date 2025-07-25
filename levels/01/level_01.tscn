@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2ypfh3pug8k7"]
+[gd_scene load_steps=7 format=3 uid="uid://c2ypfh3pug8k7"]
 
 [ext_resource type="Script" uid="uid://caxokb68xq41j" path="res://levels/01/Level01.cs" id="1_my3em"]
 [ext_resource type="Texture2D" uid="uid://6lqvbxdtrkop" path="res://assets/sprites/backgrounds/stars.png" id="1_p4c6t"]
 [ext_resource type="PackedScene" uid="uid://1pasi1cny32l" path="res://scenes/player/player.tscn" id="2_to7hf"]
 [ext_resource type="PackedScene" uid="uid://cb217dnh35gd2" path="res://scenes/enemie/enemie.tscn" id="3_02d30"]
+[ext_resource type="FontFile" uid="uid://dbdkxttrkmyx6" path="res://fonts/Array/Fonts/OTF/Array-Bold.otf" id="3_lruek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my3em"]
 size = Vector2(20, 648)
@@ -22,6 +23,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_p4c6t")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_lruek")
+theme_override_font_sizes/font_size = 64
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("2_to7hf")]
 position = Vector2(578, 596)
